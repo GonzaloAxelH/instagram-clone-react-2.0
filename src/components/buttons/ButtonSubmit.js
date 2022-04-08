@@ -1,12 +1,18 @@
 import React from "react";
 
-export default function ButtonSubmit({ isDisable, children, ...props }) {
+export default function ButtonSubmit({
+  invert,
+  isDisable,
+  children,
+  ...props
+}) {
+  const btnStyleInvert = "bg-white text-black border cursor-pointer";
+  const btnStyle = `bg-blue-medium text-white ${isDisable && "opacity-50"}`;
+  const baseStyle = "w-full rounded h-8 font-bold mt-2";
   return (
     <button
       disabled={isDisable}
-      className={`bg-blue-500 text-white w-full rounded h-8 font-bold ${
-        isDisable && "opacity-50"
-      }`}
+      className={`${baseStyle} ${invert ? btnStyleInvert : btnStyle}`}
       type="submit"
       {...props}
     >
