@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ButtonSubmit from "../../components/buttons/ButtonSubmit";
 import Input from "../../components/inputs/Input";
 import FirebaseContext from "../../context/firebase";
-
+import Logo from "../../components/Logo/Logo";
 const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
@@ -38,9 +38,7 @@ const Login = () => {
         />
       </div>
       <div className="w-2/5 flex flex-col items-center">
-        <h1>
-          <img src="/images/logo.png" alt="Instagram" />
-        </h1>
+        <Logo />
         {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
         <form onSubmit={handleLogin} method="POST" className="pl-4 pr-4">
           <Input

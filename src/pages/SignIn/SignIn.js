@@ -10,6 +10,7 @@ import ButtonSubmit from "../../components/buttons/ButtonSubmit";
 import Input from "../../components/inputs/Input";
 import FirebaseContext from "../../context/firebase";
 import { doesUsernameExist } from "../../services/firebase";
+import Logo from "../../components/Logo/Logo";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -65,9 +66,7 @@ const SignIn = () => {
         />
       </div>
       <div className="w-2/5 flex flex-col items-center">
-        <h1>
-          <img src="/images/logo.png" alt="Instagram" />
-        </h1>
+        <Logo />
         {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
         <form onSubmit={handleSignup}>
           <Input
