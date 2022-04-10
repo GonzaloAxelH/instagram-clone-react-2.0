@@ -1,17 +1,16 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ButtonSubmit from "../../components/buttons/ButtonSubmit";
 import Input from "../../components/inputs/Input";
-import FirebaseContext from "../../context/firebase";
+
 import Logo from "../../components/Logo/Logo";
 const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const { db } = useContext(FirebaseContext);
   const [emailAdress, setEmalAdress] = useState("");
   const [password, setPassword] = useState("");
-  const isUserInvalid = password === "" || emailAdress === "";
+  const [isUserInvalid, setIsUserInvalid] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -24,11 +23,16 @@ const Login = () => {
         setError(error.message);
         setEmalAdress("");
         setPassword("");
+        setIsUserInvalid(false);
       });
+    setTimeout(() => {
+      setIsUserInvalid(false);
+    }, 1000);
   };
   useEffect(() => {
+    setIsUserInvalid(password === "" || emailAdress === "");
     document.title = "Login - Instagram";
-  }, []);
+  }, [password, emailAdress]);
   return (
     <div className="flex  mx-auto items-center max-w-screen-md h-screen flex-wrap">
       <div className="flex w-3/5">

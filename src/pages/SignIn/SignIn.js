@@ -1,4 +1,4 @@
-import { collection, addDoc } from "firebase/firestore";
+import { collection, setDoc, doc } from "firebase/firestore";
 import { useState, useContext, useEffect } from "react";
 import {
   getAuth,
@@ -38,15 +38,17 @@ const SignIn = () => {
         await updateProfile(user, {
           displayName: username,
         });
-        // Add a new document with a generated id.
-        const docRef = await addDoc(collection(db, "users"), {
-          userId: user.uid,
-          userName: username.toLowerCase(),
+        console.log(user.uid);
+
+        await setDoc(doc(db, "users", user.uid), {
+          username: username.toLowerCase(),
           fullName: fullname,
           emailAddress: emailAdress.toLowerCase(),
           dateCreated: Date.now(),
           followers: [],
+          userId: user.uid,
         });
+
         navigate("/", { replace: true });
       } catch (error) {
         setError(error.message);

@@ -4,11 +4,10 @@ import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import useUser from "../../hooks/useUser";
 export default function Home() {
-  const { user } = useUser();
   useEffect(() => {
     document.title = "Instagram";
   });
-  console.log(user);
+
   return (
     <div className="bg-gray-background">
       <Header />

@@ -10,7 +10,7 @@ import Button from "../buttons/Button";
 
 export default function Header() {
   const { user } = useContext(UserContext);
-  console.log(user);
+
   const handleLogOut = async () => {
     const auth = getAuth();
     await signOut(auth);

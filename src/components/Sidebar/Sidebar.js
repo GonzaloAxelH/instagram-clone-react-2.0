@@ -8,8 +8,8 @@ function Sidebar() {
 
   return (
     <div className="p-4">
-      <User userName={user.userName} fullName={user.fullName} />
-      <Suggestions userId={user.userId} />
+      <User userName={user.username} fullName={user.fullName} />
+      <Suggestions userId={user.userId} following={user.following} />
     </div>
   );
 }
