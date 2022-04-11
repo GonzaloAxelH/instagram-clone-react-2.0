@@ -444,11 +444,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1536px;
   }
 }
+.fixed {
+  position: fixed;
+}
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
 .col-span-3 {
   grid-column: span 3 / span 3;
+}
+.col-span-4 {
+  grid-column: span 4 / span 4;
+}
+.col-span-1 {
+  grid-column: span 1 / span 1;
 }
 .m-2 {
   margin: 0.5rem;
@@ -463,17 +472,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-2 {
   margin-top: 0.5rem;
 }
+.mr-3 {
+  margin-right: 0.75rem;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
 }
 .mt-4 {
   margin-top: 1rem;
 }
-.mr-3 {
-  margin-right: 0.75rem;
-}
 .mb-4 {
   margin-bottom: 1rem;
+}
+.mb-16 {
+  margin-bottom: 4rem;
+}
+.mb-32 {
+  margin-bottom: 8rem;
 }
 .flex {
   display: flex;
@@ -498,6 +513,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-screen {
   height: 100vh;
+}
+.h-4 {
+  height: 1rem;
 }
 .w-full {
   width: 100%;
@@ -595,11 +613,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 .pl-4 {
   padding-left: 1rem;
 }
 .pr-4 {
   padding-right: 1rem;
+}
+.pt-16 {
+  padding-top: 4rem;
 }
 .text-center {
   text-align: center;
@@ -612,16 +637,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .font-bold {
   font-weight: 700;
-}
-.text-gray-base {
-  --tw-text-opacity: 1;
-  color: rgb(97 97 97 / var(--tw-text-opacity));
 }
 .text-blue-medium {
   --tw-text-opacity: 1;
   color: rgb(0 92 152 / var(--tw-text-opacity));
+}
+.text-gray-base {
+  --tw-text-opacity: 1;
+  color: rgb(97 97 97 / var(--tw-text-opacity));
 }
 .text-white {
   --tw-text-opacity: 1;

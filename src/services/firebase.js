@@ -33,7 +33,7 @@ export async function getSuggestedProfiles({ userId, following }) {
     const profiles = querySnapshot.docs.map((user) => {
       return { ...user.data(), docId: user.id };
     });
-    console.log(following);
+
     const filterProfiles = (allProfiles) => {
       return allProfiles.filter(
         (profile) =>
@@ -77,8 +77,23 @@ export const getPhotos = async (userId, following) => {
   const response = query(photosRef, where("userId", "in", following));
   const querySnapshot = await getDocs(response);
 
-  const photos = querySnapshot.docs.map((photo) => {
+  const Followersphotos = querySnapshot.docs.map((photo) => {
     return { ...photo.data(), docId: photo.id };
   });
-  return photos;
+
+  const photoWithdetails = await Promise.all(
+    Followersphotos.map(async (photo) => {
+      let userLikedPhoto = false;
+      if (photo.likes.includes(userId)) {
+        userLikedPhoto = true;
+      }
+      const { username } = await getUserObjByUserId(photo.userId);
+      return { username, ...photo, userLikedPhoto };
+    })
+  );
+
+  return photoWithdetails;
 };
+
+/*
+ */
