@@ -20,17 +20,17 @@ export default function PostActions({
   const { db } = useContext(FirebaseContext);
 
   const handleToggleLiked = async () => {
+    setLikes((likes) => (toggleLiked ? likes - 1 : likes + 1));
     setToggleLiked(!toggleLiked);
-    const photoRef = doc(db, "photos", docId);
 
+    const photoRef = doc(db, "photos", docId);
     await updateDoc(photoRef, {
       likes: toggleLiked ? arrayRemove(docId) : arrayUnion(docId),
     });
-    setLikes((likes) => (toggleLiked ? likes - 1 : likes + 1));
   };
   return (
     <div>
-      <div className="flex justify-between p-4">
+      <div className="flex p-4">
         <HeartLike
           toggleLiked={toggleLiked}
           onClick={handleToggleLiked}
@@ -49,8 +49,8 @@ export default function PostActions({
           }}
         />
       </div>
-      <div className="p-4 py-8">
-        <p className="font-bold">
+      <div className="ml-4 mb-1">
+        <p className="font-bold text-sm">
           {likes === 1 ? `${likes} like` : `${likes} likes`}
         </p>
       </div>

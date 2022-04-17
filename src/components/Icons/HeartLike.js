@@ -8,9 +8,8 @@ export default function HeartLike({ toggleLiked, ...props }) {
       viewBox="0 0 24 24"
       stroke="currentColor"
       tabIndex={0}
-      className={`w-8 mr-4 select-none cursor-pointer focus:outline-none ${
-        toggleLiked ? "fill-red text-red-primary" : "text-black-light"
-      }`}
+      className={`w-8 mr-4 select-none cursor-pointer focus:outline-none ${toggleLiked ? "fill-red text-red-primary" : "text-black-light"
+        }`}
       {...props}
     >
       <path

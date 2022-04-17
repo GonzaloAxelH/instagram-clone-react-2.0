@@ -12,7 +12,7 @@ const User = ({ userName, fullName }) => {
   ) : (
     <Link to={`/p/${userName}`} className="grid grid-cols-4 gap-4 items-center">
       <div className="flex items-center justify-between cols-span-1">
-        <UserImage w={12} h={12} name={userName} />
+        <UserImage w={12} h={12} name={userName} to={`/images/avatars/karl.jpg`} />
       </div>
       <div className="col-span-3">
         <p className="font-bold text-sm">{userName}</p>
@@ -30,4 +30,4 @@ User.propTypes = {
 
 export default User;
 
-User.whyDidYouRender = true;
+

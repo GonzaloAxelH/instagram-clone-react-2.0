@@ -18,7 +18,7 @@ export default function useAuthListener() {
     });
     console.log("render useAuthListener");
     return () => listener();
-  }, [onAuthStateChanged]);
+  }, [onAuthStateChanged, user]);
 
   return { user };
 }

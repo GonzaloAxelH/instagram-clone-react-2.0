@@ -4,7 +4,7 @@ import Post from "../Post/Post";
 import LoadingSkeletonPhotos from "../Skeletons/LoadSkeletonPhotos";
 export default function Timeline() {
   const { photos } = usePhotos();
-  console.log(photos);
+
   return (
     <div className="container col-span-2 mt-4 mx-auto">
       {photos === null && <LoadingSkeletonPhotos count={4} />}

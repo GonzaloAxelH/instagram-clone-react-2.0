@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="bg-gray-background">
       <Header />
-      <div className="grid grid-cols-3 gap-4 justify-center mx-auto max-w-screen-lg pt-16">
+      <div className="grid grid-cols-3 gap-4 justify-center mx-auto max-w-screen-md pt-16">
         <Timeline />
         <Sidebar />
       </div>

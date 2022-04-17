@@ -14,6 +14,6 @@ function Sidebar() {
   );
 }
 
-export default memo(Sidebar);
+export default Sidebar
 
-Sidebar.whyDidYouRender = true;
+

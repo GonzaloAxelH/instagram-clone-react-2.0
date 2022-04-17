@@ -95,5 +95,4 @@ export const getPhotos = async (userId, following) => {
   return photoWithdetails;
 };
 
-/*
- */
+

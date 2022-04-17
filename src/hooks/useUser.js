@@ -10,9 +10,9 @@ export default function useUser() {
       const resUser = await getUserObjByUserId(user.uid);
       setActiveUser(resUser);
     }
-    if (user) {
-      fetchUser();
-    }
+
+    fetchUser();
+
   }, [user]);
 
   return { user: activeUser };
