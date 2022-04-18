@@ -18,6 +18,13 @@ export async function doesUsernameExist(username) {
   return querySnapshot.docs.length !== 0;
 }
 
+
+export async function getUserObjByUserName(username) {
+  const result = query(usersRef, where("username", "==", username));
+  const querySnapshot = await getDocs(result);
+
+  return querySnapshot.docs.map((el) => el.data())[0];
+}
 export async function getUserObjByUserId(id) {
   const result = query(usersRef, where("userId", "==", id));
   const querySnapshot = await getDocs(result);

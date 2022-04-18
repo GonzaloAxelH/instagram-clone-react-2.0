@@ -5,9 +5,11 @@ import { lazy } from "react";
 import UserContext from "./context/user";
 import ProtectedRout from "./protectedroute";
 import useAuthListener from "./hooks/useAuthListener";
+
 const Login = lazy(() => import("./pages/Login/Login"));
 const SignUp = lazy(() => import("./pages/SignIn/SignIn"));
 const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
+const Profile = lazy(() => import("./pages/Profile/Profile"))
 const Home = lazy(() => import("./pages/Home/Home"));
 const App = () => {
   const { user } = useAuthListener();
@@ -28,6 +30,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/not-found" element={<NotFound />} />
+            <Route path="/p/:username" element={<Profile />} />
 
           </Routes>
         </Suspense>
